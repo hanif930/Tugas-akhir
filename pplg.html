@@ -1,0 +1,648 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<title>1 File Banyak Halaman</title>
+  <link rel="stylesheet" href="pplg.css">
+
+<style>
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body{
+  background: linear-gradient(to right, mediumpurple, skyblue);
+  font-family: Arial;
+  min-height: 100vh;
+  padding: 20px;
+}
+
+  
+.menu button{
+  border: none;
+  background: transparent;
+  color: white;
+  padding: 12px 20px;
+  border-radius: 30px;
+  cursor: pointer;
+}
+
+.menu button.active{
+  background: rgba(255,255,255,0.3);
+  color: white;
+}
+
+.card-besar{
+  width: 90%;
+  max-width: 1000px;
+  min-height: 600px;
+  background: white;
+  margin: auto;
+  border-radius: 25px;
+  overflow: hidden;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+}
+
+
+.header{
+  background: linear-gradient(to right, dodgerblue, turquoise);
+  color: white;
+  text-align: center;
+  padding: 30px;
+}
+.menu{
+  display: flex;
+  overflow-x: auto;
+  white-space: nowrap;
+  scrollbar-width: none;
+  justify-content: flex-start;
+  padding-left: 10px;
+}
+
+.menu::-webkit-scrollbar{
+  display: none;
+}
+
+.menu button{
+  flex: 0 0 auto;
+  min-width: 120px;
+}
+nav{
+  background: black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+  padding: 15px;
+}
+
+nav button{
+  background: transparent;
+  border: none;
+  outline: none;
+  box-shadow: none;
+
+  color: white;
+  font-size: 16px;
+
+  cursor: pointer;
+
+  padding: 0;
+}
+
+nav button:hover{
+  color: cyan;
+  background: transparent;
+}
+
+
+.halaman{
+  display: none;
+  padding: 30px;
+}
+
+#home{
+  display: block;
+}
+
+  .type{
+  width: 0;
+  overflow: hidden;
+  white-space: nowrap;
+  border-right: 3px solid black;
+  animation: typing 4s steps(40) 1 forwards;
+}
+
+@keyframes typing{
+  from{
+    width: 0;
+  }
+  to{
+    width: 40ch;
+  }
+}
+
+@keyframes blink{
+  50%{
+    border-color: transparent;
+  }
+}
+  .card-link{
+  display:flex;
+  align-items:center;
+  gap:15px;
+  padding:15px;
+  margin:15px 0;
+  border-radius:15px;
+  background:#fff;
+  border:1px solid #ddd;
+  box-shadow:0 4px 10px rgba(0,0,0,0.1);
+}
+
+.icon{
+  font-size:40px;
+}
+
+.info h3{
+  margin:0;
+}
+
+.info p{
+  margin:5px 0 10px;
+}
+
+.info a{
+  text-decoration:none;
+  color:#2196f3;
+  font-weight:bold;
+}
+
+.icon img{
+  width: 40px;
+  height: 40px;
+  object-fit: contain;
+}
+.skills{
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 20px;
+}
+.card{
+  background: white;
+  border-radius: 20px;
+  padding: 25px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.15);
+  transition: 0.3s;
+}
+.card:hover{
+  transform: scale(1.03);
+}
+.item{
+  text-align: center;
+}
+.item img{
+  width: 70px;
+  height: 70px;
+  object-fit: contain;
+}
+.item h3{
+  margin-top: 10px;
+}
+#software{
+
+.skills{
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 20px;
+}
+
+@media (min-width: 768px){
+  .skills{
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  }
+}
+
+.card-skill{
+  background: white;
+  border-radius: 25px;
+  padding: 25px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+.card-skill:hover{
+  transition: 0.3s;
+  box-shadow: 0 0 15px 5px cyan;
+}
+
+.atas{
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.atas img{
+  width: 70px;
+  height: 70px;
+  object-fit: contain;
+}
+
+.atas h4{
+  margin: 0;
+}
+#language .card{
+  width: 90%;
+  margin: 20px auto;
+  padding: 20px;
+  border-radius: 15px;
+  background: white;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+}
+
+#language summary{
+  font-size: 20px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+#language .card p{
+  margin-top: 15px;
+  line-height: 1.6;
+}
+
+@media (max-width:600px){
+  #language .card{
+    width: 95%;
+  }
+}
+
+#kerja{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+}
+
+#kerja .card-skill{
+  width: 320px;
+  background: white;
+  padding: 20px;
+  border-radius: 20px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.15);
+  border: 1px solid #e5e5e5;
+}
+
+#kerja .card-skill h3{
+  margin-bottom: 10px;
+}
+
+#kerja .card-skill p{
+  line-height: 1.5;
+  margin-bottom: 15px;
+}
+
+#kerja .logo-skill{
+  display: flex;
+  gap: 15px;
+  flex-wrap: wrap;
+}
+
+#kerja .logo-skill i{
+  font-size: 45px;
+}
+
+
+</style>
+</head>
+<body>
+
+<div class="card-besar">
+
+  <div class="header">
+    <h1>🖥Mengenal Jurusan PPLG️</h1>
+  </div>
+
+  <nav class="menu">
+    <button onclick="tampil('home')">🏠Home</button>
+    <button onclick="tampil('belajar')">📚Learning Website</button>
+    <button onclick="tampil('software')">💻Software</button>
+    <button onclick="tampil('language')">🌐Language</button>
+    <button onclick="tampil('kerja')">💼Job Opportunities</button>
+
+  </nav>
+
+
+  <div id="home" class="halaman">
+    <h2 class="type">Selamat Datang di Website belajar jurusan PPLG</h2>
+  </div>
+
+ <div id="belajar" class="halaman">
+   <div class="card-link">
+  <div class="icon">
+    <img src="sololearn.jpg" alt="SoloLearn">
+  </div>
+  <div class="info">
+    <h3>SoloLearn</h3>
+    <p>Belajar coding interaktif HTML, CSS, JavaScript, Python, dan lainnya.</p>
+    <a href="https://www.sololearn.com" target="_blank">
+      Kunjungi Website →
+    </a>
+  </div>
+</div>
+
+<div class="card-link">
+  <div class="icon">
+    <img src="w3schol.jpg" alt="W3schools">
+  </div>
+  <div class="info">
+    <h3>W3Schools</h3>
+    <p>Referensi dan tutorial web development lengkap.</p>
+    <a href="https://www.w3schools.com" target="_blank">
+      Kunjungi Website →
+    </a>
+  </div>
+</div>
+
+<div class="card-link">
+  <div class="icon">
+    <img src="petanikode.jpg" alt="Petani Kode">
+  </div>
+  <div class="info">
+    <h3>Petani Kode</h3>
+    <p>Referensi dan tutorial web development lengkap.</p>
+    <a href="https://www.petanikode.com/" target="_blank">
+      Kunjungi Website →
+    </a>
+  </div>
+   </div>
+ </div>
+  <div id="software" class="halaman">
+<div class="skills">
+
+<div class="card-skill">
+  <div class="atas">
+    <img src="vscode.jpg" alt="Logo">
+
+    <div>
+      <h4>Visual Studio Code</h4>
+    </div>
+  </div>
+
+  <p>
+    Visual Studio Code (VS Code) adalah sebagai aplikasi penyunting kode (code editor) untuk menulis, mengedit, dan mengelola kode sumber (source code) dalam pembuatan perangkat lunak, situs web, atau aplikasi.
+  </p>
+</div>
+<div class="card-skill">
+  <div class="atas">
+    <img src="android.png" alt="Logo">
+
+    <div>
+      <h4>Android Studio</h4>
+    </div>
+  </div>
+
+  <p>
+    Android Studio adalah sebagai wadah tunggal terintegrasi (IDE) untuk merancang, mengode, menguji, dan meluncurkan aplikasi Android.
+  </p>
+</div>
+<div class="card-skill">
+  <div class="atas">
+    <img src="adobe.jpg" alt="Logo">
+
+    <div>
+      <h4>Adobe Illustrator</h4>
+    </div>
+  </div>
+
+  <p>
+    Adobe Illustrator adalah untuk membuat dan mengedit grafis berbasis vektor yang dapat diperbesar ke ukuran berapa pun tanpa kehilangan ketajaman atau menjadi pecah.
+  </p>
+</div>
+<div class="card-skill">
+  <div class="atas">
+    <img src="figma.jpg" alt="Logo">
+
+    <div>
+      <h4>Figma</h4>
+    </div>
+  </div>
+
+  <p>
+    Figma adalah sebagai perangkat lunak berbasis web (cloud-based) untuk merancang antarmuka pengguna (UI/UX) situs web, aplikasi seluler, serta media digital lainnya secara kolaboratif.
+  </p>
+</div>
+<div class="card-skill">
+  <div class="atas">
+    <img src="borland.png" alt="Logo">
+
+    <div>
+      <h4>Borland C++</h4>
+    </div>
+  </div>
+
+  <p>
+    Borland C++ adalah sebagai perangkat lunak lingkungan pengembangan terpadu (IDE) untuk menulis, mengompilasi (compile), memperbaiki kesalahan (debug), dan menjalankan kode program menggunakan bahasa pemrograman C dan C++.
+  </p>
+</div>
+<div class="card-skill">
+  <div class="atas">
+    <img src="mysql.png" alt="Logo">
+
+    <div>
+      <h4>MySql</h4>
+    </div>
+  </div>
+
+  <p>
+    MySQL adalah sebagai sistem manajemen basis data (Database Management System / DBMS) untuk menyimpan, mengelola, mengubah, dan mengambil data digital secara terstruktur.
+  </p>
+</div>
+  </div>
+ </div>
+ 
+  <div id="language" class="halaman">
+      <h2>Bahasa Pemrograman</h2>
+<div class="card">
+    <details>
+        <summary>
+          <i class="fa-brands fa-html5"></i> HTML
+        </summary>
+        <p>
+         HTML adalah singkatan dari Hypertext Markup Language, yaitu bahasa markah standar yang digunakan untuk membuat dan menyusun struktur kerangka sebuah halaman website. 
+        </p>
+    </details>
+</div>
+<br>
+<div class="card">
+    <details>
+        <summary>
+          <i class="fa-brands fa-css3-alt"></i> CSS
+        </summary>
+        <p>
+         CSS adalah singkatan dari Cascading Style Sheets, yaitu bahasa desain yang digunakan untuk mengatur tampilan dan estetika sebuah halaman website.
+        </p>
+    </details>
+</div>
+<br>
+<div class="card">
+    <details>
+        <summary>
+          <i class="fa-brands fa-js"></i> JavaScript
+        </summary>
+        <p>
+         JavaScript (JS) adalah bahasa pemrograman tingkat tinggi, dinamis, dan bersifat cross-platform yang menjadi fondasi utama dalam pembuatan website interaktif modern.
+        </p>
+    </details>
+</div>
+<br>
+<div class="card">
+    <details>
+        <summary>
+          <i class="fa-brands fa-python"></i> Python
+        </summary>
+        <p>
+         Python adalah bahasa pemrograman tingkat tinggi yang dirancang agar mudah dibaca, dipahami, dan ditulis oleh manusia.
+        </p>
+    </details>
+</div>
+<br>
+<div class="card">
+    <details>
+        <summary>
+          <i class="fa-brands fa-java"></i> Java
+        </summary>
+        <p>
+         Java adalah bahasa pemrograman tingkat tinggi, berorientasi objek (OOP), dan bersifat multiplatform [1, 2].
+        </p>
+    </details>
+</div>
+<br>
+<div class="card">
+    <details>
+        <summary>
+<img src="https://raw.githubusercontent.com/simple-icons/simple-icons/develop/icons/cplusplus.svg" width="20">
+C++
+        </summary>
+        <p>
+         C++ adalah bahasa pemrograman tingkat tinggi yang merupakan pengembangan dari bahasa C, dengan tambahan fitur Pemrograman Berorientasi Objek (OOP).
+        </p>
+    </details>
+</div>
+<br>
+<div class="card">
+    <details>
+        <summary>
+<img src="https://raw.githubusercontent.com/simple-icons/simple-icons/develop/icons/flutter.svg" width="20">
+Flutter
+        </summary>
+        <p>
+         Flutter adalah sebuah framework atau kerangka kerja UI (User Interface) open-source buatan Google yang digunakan untuk membangun aplikasi multiplatform cantik secara native dari satu basis kode (single codebase) [1].
+        </p>
+    </details>
+</div>
+<br>
+<div class="card">
+    <details>
+        <summary>
+<img src="https://raw.githubusercontent.com/simple-icons/simple-icons/develop/icons/kotlin.svg" width="20">
+Kotlin
+        </summary>
+        <p>
+         Kotlin adalah bahasa pemrograman modern, berorientasi objek, dan diketik secara statis (statically-typed) yang berjalan di atas Java Virtual Machine (JVM).
+        </p>
+    </details>
+  </div>
+</div>
+  
+  <div id="kerja" class="halaman">
+    <div class="card-kerja">
+    <h3>🎨 Front End Developer</h3>
+
+    <p>
+      Bertugas membuat tampilan website agar menarik,
+      responsif, dan mudah digunakan pengguna.
+    </p>
+<br>
+    <h4>🌐 Language</h4>
+
+    <div class="logo-skil">
+      <h2>
+      <i class="fa-brands fa-html5"></i>
+      <i class="fa-brands fa-css3-alt"></i>
+      <i class="fa-brands fa-js"></i>
+      </h2>
+    </div>
+      <br>
+    <h4>🏗️ Framework</h4>
+      
+    <div class="logo-skil">
+      <h2>
+      <i class="fa-brands fa-react"></i>
+      <i class="fa-brands fa-vuejs"></i>
+      <i class="fa-brands fa-angular"></i>
+    </h2>
+    </div>
+      <br>
+    <h4>📚 Libraries</h4>
+      
+    <div class="logo-skil">
+      <h2>
+      <i class="fa-brands fa-tailwind-css"></i>
+      <i class="fa-brands fa-bootstrap"></i>
+    </h2>
+    </div>
+  </div>
+<br>
+  <div class="card-kerja">
+    <h3>⚙️ Back End Developer</h3>
+
+    <p>
+      Bertugas mengelola server, database, dan logika
+      aplikasi agar website berjalan dengan baik.
+    </p>
+<br>
+    <h4>🌐 Language</h4>
+
+    <div class="logo-skil">
+    <h2>
+      <i class="fa-brands fa-node"></i>
+      <i class="fa-brands fa-python"></i>
+      <i class="fa-brands fa-java"></i>
+      <i class="fa-brands fa-php"></i>
+      <i class="fa-solid fa-gem"></i>
+    </h2>
+    </div>
+    <br>
+    <h4>🗄️ Database</h4>
+
+    <div class="logo-skil">
+    <h2>
+      <i class="fa-solid fa-database"></i>
+      <i class="fa-brands fa-postgresql"></i>
+      
+    </h2>
+    </div>
+    <br>
+    <h4>🔌 Api</h4>
+
+    <div class="logo-skil">
+    <h2>
+      <i class="fa-solid fa-window-restore"></i>    
+    </h2>
+    </div>
+  </div>
+</div>
+<script>
+const buttons = document.querySelectorAll(".menu button");
+
+buttons.forEach(button => {
+  button.addEventListener("click", function() {
+    buttons.forEach(btn => btn.classList.remove("active"));
+    this.classList.add("active");
+  });
+});
+
+function tampil(id){
+
+  let halaman = document.querySelectorAll('.halaman');
+
+  halaman.forEach(function(item){
+    item.style.display = "none";
+  });
+
+  document.getElementById(id).style.display = "block";
+}
+
+</script>
+
+</body>
+</html>
